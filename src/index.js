@@ -1,3 +1,5 @@
 import './index.html'
+import './courses.html'
 import './nullstyle.scss'
 import './styles.scss'
+import './main.js'
