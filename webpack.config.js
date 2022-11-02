@@ -68,6 +68,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
         }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src', 'courses.html'),
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].scss',
         })
