@@ -13,6 +13,16 @@ const devMode = mode === 'development'; // Проверка мода на дев
 const target = devMode ? 'web' : 'browserslist'; // Если development, то web настройки, если продакшн, то файл browserslistrc
 const devtool = devMode ? 'source-map' : undefined; // При дев моде, будет source-map для отслежиания ошибок 
 
+const htmlPageNames = ['index', 'courses'];
+
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.html`,
+        filename: `${name}.html`,
+    })
+});
+
+
 module.exports = {
     mode, //Мод (дев или прод)
     target, // ресурс (web или browserslistrc)
@@ -65,14 +75,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'index.html'),
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'courses.html'),
-        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].scss',
         })
-    ]
+    ].concat(multipleHtmlPlugins)
 };
