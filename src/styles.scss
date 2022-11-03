@@ -451,7 +451,6 @@
     
         gap: 100px;
         margin: 120px 0;
-        padding: 120px 0;
         @media (max-width: 991.98px) {
             flex-direction: column;
             gap: 40px;
@@ -560,7 +559,6 @@
 
     &__container {
         margin: 120px 0;
-        padding: 120px 0;
         display: flex;
         flex-direction: row;
         align-items: center;
