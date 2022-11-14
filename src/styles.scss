@@ -798,10 +798,11 @@
         justify-content: center;
     }
     &__item {
+        overflow: hidden;
         width: 100%;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgb(231, 231, 231);
-        padding: 30px;
+        padding: 30px 30px 0px 30px;
 
         &:not(:last-child) {
             margin-bottom: 30px;
@@ -826,15 +827,17 @@
         max-width: 100%;
     }
     &__description {
+        height: 0;
         margin-top: 15px;
         max-width: 690px;
-        padding-right: 20px;
+        padding: 15px 20px 0px 0px;
         font-size: 16px;
         line-height: 130%;
         color: #353A5A;
-        display: none;
+        transition: all .5s ease;
+
         &.active {
-            display: block;
+            height: 100px;
         }
     }
 }
